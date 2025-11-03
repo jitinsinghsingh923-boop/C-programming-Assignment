@@ -1,0 +1,510 @@
+
+             //  ASSIGNMENT - 01     
+
+//Question-1. What do you mean by arrays? Give one example of array and how you can declare an array.
+
+/* Answer:
+   An array is a collection of elements of the same data type stored in contiguous memory locations.
+   It is used to store multiple values using a single variable name.  */
+
+// CODE
+#include <stdio.h>
+int main() {
+    int numbers[5] = {11, 20, 30, 40, 92};  // Declaration of array
+
+    printf("First element: %d\n", numbers[0]);
+    printf("Third element: %d\n", numbers[2]);
+    return 0;
+}
+
+// OUTPUT
+
+First element: 11
+Last element: 92
+
+// Question-2. What do you mean by Functions? Write the types of functions and give one example in code of each type.
+
+/* Answer:
+A function is a block of code that performs a specific task.
+Functions make code modular, reusable, and easy to understand.
+
+Types of Functions:
+
+Library Functions – Predefined in C (e.g., printf(), scanf(), sqrt()).
+
+User-Defined Functions – Created by the programmer. */
+
+// CODE 
+
+// Example 1: Using a Library Function
+
+#include <stdio.h>
+#include <math.h>   // Header for sqrt()
+
+int main() {
+    double num = 16.0;
+    double result = sqrt(num);   // Using predefined function
+
+    printf("Square root of %.2f is %.2f\n", num, result);
+    return 0;
+}
+
+
+// OUTPUT
+Square root of 16.00 is 4.00
+
+// Example 2: Using a User-Defined Function
+
+#include <stdio.h>
+
+// Function declaration
+int add(int a, int b) {
+    return a + b;   // Function definition
+}
+
+int main() {
+    int x = 5, y = 10;
+    int sum = add(x, y);   // Function call
+
+    printf("The sum of %d and %d is %d\n", x, y, sum);
+    return 0;
+}
+
+// OUTPUT
+
+The sum of 5 and 10 is 15
+
+// Question-3. What do you mean by Pointers? Write a code how you can initialize the pointer.
+
+/* Answer:
+A pointer is a variable that stores the memory address of another variable. */
+
+//CODE
+// Intialization of pointer
+
+#include <stdio.h>
+int main() {
+    int num = 10;
+    int *ptr;        // Declaration of pointer
+    ptr = &number;      // Initialization with address of number
+
+    printf("Value of number = %d\n", num);
+    printf("Address of number = %p\n", ptr);
+    printf("Value using pointer = %d\n", *ptr);  // Access value using pointer
+
+    return 0;
+}
+
+//OUTPUT
+
+Value of number = 10
+Address of number = 0x7ffee4b4c8ac  // this address value change evertime when run it.
+Value using pointer = 10
+
+// Question-4. What are the types of array? Write in a code 1D & 2D included.
+
+ /* Answer
+  Types of Arrays in C
+  An array is a collection of elements of the same data type stored at contiguous memory locations. There are mainly two types of arrays:
+  
+1- One-Dimensional Array (1D Array)
+
+   Stores data in a single line (like a list).
+
+   Syntax: data_type array_name[size];
+
+2- Two-Dimensional Array (2D Array)
+
+   Stores data in rows and columns (like a table).
+
+   Syntax: data_type array_name[rows][columns];  */
+
+
+//CODE
+
+// 1D Array Example-
+
+#include <stdio.h>
+
+int main() {
+    int numbers[5] = {11, 22, 33, 44, 55}; // 1D array of size 5
+    
+    printf("1D Array Elements:\n");
+    for(int i = 0; i < 5; i++) {          // Loop through each element
+        printf("%d ", numbers[i]);        // Print element at index i
+    }
+    return 0;
+}
+
+//OUTPUT
+
+1D Array Elements:
+11 22 33 44 55
+
+// 2D Array Example-
+
+#include <stdio.h>
+
+int main() {
+    int matrix[2][3] = { {1, 2, 3}, {4, 5, 6} }; // 2D array: 2 rows, 3 columns
+    
+    printf("\n2D Array Elements:\n");
+    for(int i = 0; i < 2; i++) {               // Loop through rows
+        for(int j = 0; j < 3; j++) {           // Loop through columns
+            printf("%d ", matrix[i][j]);       // Print element at row i, column j
+        }
+        printf("\n");                           // Move to next row
+    }
+    return 0;
+}
+
+// OUTPUT
+
+2D Array Elements:
+1 2 3
+4 5 6
+
+//Question-5. Explain the types of Operators in code.
+
+// 1. Arithmetic Operators
+
+// Used for mathematical calculations: +, -, *, /, %
+
+#include <stdio.h>
+int main() {
+    int a = 10, b = 3;
+    printf("a + b = %d\n", a + b); // Addition
+    printf("a - b = %d\n", a - b); // Subtraction
+    printf("a * b = %d\n", a * b); // Multiplication
+    printf("a / b = %d\n", a / b); // Division (integer)
+    printf("a %% b = %d\n", a % b); // Modulus
+    return 0;
+}
+
+//OUTPUT
+
+a + b = 13
+a - b = 7
+a * b = 30
+a / b = 3
+a % b = 1
+
+
+// 2. Relational Operators
+
+// Used for comparison: ==, !=, >, <, >=, <=
+
+#include <stdio.h>
+int main() {
+    int a = 10, b = 5;
+    printf("a == b? %d\n", a == b); // Equal
+    printf("a != b? %d\n", a != b); // Not equal
+    printf("a > b? %d\n", a > b);   // Greater than
+    printf("a < b? %d\n", a < b);   // Less than
+    return 0;
+}
+
+//OUTPUT
+
+a == b? 0
+a != b? 1
+a > b? 1
+a < b? 0
+
+// 3. Logical Operators
+
+// Used to combine conditions: && (AND), || (OR), ! (NOT)
+
+#include <stdio.h>
+int main() {
+    int x = 1, y = 0;
+    printf("x && y = %d\n", x && y); // AND
+    printf("x || y = %d\n", x || y); // OR
+    printf("!x = %d\n", !x);         // NOT
+    return 0;
+}
+
+//OUTPUT
+
+x && y = 0
+x || y = 1
+!x = 0
+
+// 4. Assignment Operators
+
+// Used to assign values: =, +=, -=, *=, /=, %=
+
+#include <stdio.h>
+int main() {
+    int a = 10;
+    a += 5; // Same as a = a + 5
+    printf("a += 5 => %d\n", a);
+    a *= 2; // a = a * 2
+    printf("a *= 2 => %d\n", a);
+    return 0;
+}
+
+//OUTPUT
+
+a += 5 => 15
+a *= 2 => 30
+
+// 5. Unary Operators
+
+// Used with single operand: ++, --, +, -, !
+
+#include <stdio.h>
+int main() {
+    int a = 5;
+    a++; // Increment
+    printf("a++ = %d\n", a);
+    a--; // Decrement
+    printf("a-- = %d\n", a);
+    return 0;
+}
+
+//OUTPUT
+
+a++ = 6
+a-- = 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
