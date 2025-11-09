@@ -1,0 +1,184 @@
+     //       Assignment 2 - C programming
+
+
+Question - 1: What do you mean by structures?
+/* A structure in C is a user-defined data type that allows you to store different types of data together under one name.
+It is used when you want to group related data items — like name, age, and marks of a student. */
+
+// CODE
+
+#include <stdio.h>
+
+struct Student {
+    int roll;
+    char name[30];
+    float marks;
+};
+
+int main() {
+    struct Student s1 = {1, "Jitin", 87.5};
+
+    printf("Roll: %d\n", s1.roll);
+    printf("Name: %s\n", s1.name);
+    printf("Marks: %.2f\n", s1.marks);
+
+    return 0;
+}
+// output
+
+Roll: 1
+Name: Jitin
+Marks: 99.50
+
+/* Question-2 : What do you mean by Array & Pointer Array?
+
+Array: A collection of same type of elements stored in continuous memory locations.
+ Example: int arr[5]; (stores 5 integers)
+
+Array of Pointers: An array where each element is a pointer (it stores addresses).
+ Example: int *ptr[5]; (stores 5 addresses of integers)  */
+
+//CODE
+
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20, c = 30;
+    int *ptr[3];  // array of pointers
+
+    ptr[0] = &a;
+    ptr[1] = &b;
+    ptr[2] = &c;
+
+    for (int i = 0; i < 3; i++) {
+        printf("Value of ptr[%d] = %d\n", i, *ptr[i]);
+    }
+
+    return 0;
+}
+
+//OUTPUT
+
+Value of ptr[0] = 10
+Value of ptr[1] = 20
+Value of ptr[2] = 30
+
+/* Question-3: Compare two structures variables by using the comparison operator ( Not equal & equal) ?
+
+C does not directly allow comparing structures with == or != operators.
+We must compare each member individually. */
+
+//CODE
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int roll;
+    char name[20];
+};
+
+int main() {
+    struct Student s1 = {1, "Jitin"};
+    struct Student s2 = {2, "RAHUL"};
+
+    if (s1.roll == s2.roll && strcmp(s1.name, s2.name) == 0)
+        printf("Structures are Equal\n");
+    else
+        printf("Structures are Not Equal\n");
+
+    return 0;
+}
+
+//OUTPUT
+
+Structures are Not Equal
+
+/* Question-4: Perform an arithmetic operations on structures. explain simple theory and coding example
+
+We cannot do arithmetic directly on entire structures,
+but we can perform arithmetic on their members. */
+
+//CODE
+
+#include <stdio.h>
+
+struct Numbers {
+    int a;
+    int b;
+};
+
+int main() {
+    struct Numbers n1 = {10, 5};
+    struct Numbers result;
+
+    result.a = n1.a + n1.b;
+    result.b = n1.a * n1.b;
+
+    printf("Addition = %d\n", result.a);
+    printf("Product = %d\n", result.b);
+
+    return 0;
+}
+
+//OUTPUT
+
+Addition = 15
+Product = 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
